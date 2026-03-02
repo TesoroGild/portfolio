@@ -1,92 +1,25 @@
 ---
-import Icon from './Icon.astro';
+// On récupère l'URL actuelle pour savoir où on est
+const { pathname } = Astro.url;
+
+// On calcule l'URL inverse
+// Si on est sur /en/contact -> on veut /fr/contact (et inversement)
+const isEn = pathname.startsWith('/en');
+const redirectPath = isEn 
+  ? pathname.replace('/en', '/fr') || '/fr/' 
+  : pathname.replace('/fr', '/en') || '/en/';
 ---
 
-<theme-toggle>
-	<button>
-		<span class="sr-only">Dark theme</span>
-		<span class="icon light"><Icon icon="french" /></span>
-		<span class="icon dark"><Icon icon="english" /></span>
-	</button>
-</theme-toggle>
+<a href={redirectPath} class="lang-link">
+  {isEn ? 'FR' : 'EN'}
+</a>
 
 <style>
-	button {
-		display: flex;
-		border: 0;
-		border-radius: 999rem;
-		padding: 0;
-		background-color: var(--gray-999);
-		box-shadow: inset 0 0 0 1px var(--accent-overlay);
-		cursor: pointer;
-	}
-
-	.icon {
-		z-index: 1;
-		position: relative;
-		display: flex;
-		padding: 0.5rem;
-		width: 2rem;
-		height: 2rem;
-		font-size: 1rem;
-		color: var(--accent-overlay);
-	}
-
-	.icon.light::before {
-		content: '';
-		z-index: -1;
-		position: absolute;
-		inset: 0;
-		background-color: var(--accent-regular);
-		border-radius: 999rem;
-	}
-
-	:global(.langage-fr) .icon.light::before {
-		transform: translateX(100%);
-	}
-
-	:global(.langage-fr) .icon.dark,
-	:global(html:not(.langage-fr)) .icon.light,
-	button[aria-pressed='false'] .icon.light {
-		color: var(--accent-text-over);
-	}
-
-	@media (prefers-reduced-motion: no-preference) {
-		.icon,
-		.icon.light::before {
-			transition:
-				transform var(--theme-transition),
-				color var(--theme-transition);
-		}
-	}
-
-	@media (forced-colors: active) {
-		.icon.light::before {
-			background-color: SelectedItem;
-		}
-	}
+  .lang-link {
+    cursor: pointer;
+    padding: 0.5rem;
+    border: 1px solid currentColor;
+    border-radius: 4px;
+    text-decoration: none;
+  }
 </style>
-
-<script>
-	class LangageToggle extends HTMLElement {
-		constructor() {
-			super();
-
-			const button = this.querySelector('button')!;
-
-			const setLangage = (dark: boolean) => {
-				document.documentElement.classList[dark ? 'add' : 'remove']('langage-fr');
-				button.setAttribute('aria-pressed', String(dark));
-			};
-
-			button.addEventListener('click', () => setLangage(!this.isFrench()));
-
-			setLangage(this.isFrench());
-		}
-
-		isFrench() {
-			return document.documentElement.classList.contains('langage-fr');
-		}
-	}
-	customElements.define('langage-toggle', LangageToggle);
-</script>
