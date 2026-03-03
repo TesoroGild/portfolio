@@ -27,7 +27,7 @@ link: https://miandabou.vercel.app/home
 Miandabou est une plateforme e-commerce full-stack conçue pour démontrer une maîtrise du cycle d'achat et de la gestion d'inventaire. L'objectif était de bâtir une architecture modulaire capable de gérer des rôles utilisateurs distincts et des flux de données complexes.
 
 ### Fonctionnalités Clés
-##### Connection
+##### Connexion
 <image src="/portfolio/assets/login.png" width=400 center>
 
 ##### Création de compte
