@@ -6,7 +6,7 @@ import Hero from '../../components/Hero.astro';
 import PortfolioPreview from '../../components/PortfolioPreview.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 
-const projects = (await getCollection('work')).sort(
+const projects = (await getCollection('work', ({ id }) => id.startsWith('en/'))).sort(
 	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
 );
 
