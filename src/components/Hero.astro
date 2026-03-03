@@ -1,4 +1,6 @@
 ---
+import { undefined } from 'astro:schema';
+
 interface Props {
 	title: string;
 	tagline?: string;
@@ -12,12 +14,12 @@ const { align = 'center', tagline, title, link } = Astro.props;
 <div class:list={['hero stack gap-4', align]}>
 	<div class="stack gap-2">
 		<h1 class="title">
-			{link ?  (
+			{link?.trim() ?  (
 				<a href={link} target="_blank" rel="noopener noreferrer">
 					{title}
 				</a>
 			) : (
-				{title}
+				title
 			)}
 		</h1>
 		{tagline && <p class="tagline">{tagline}</p>}
