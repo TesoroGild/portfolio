@@ -36,7 +36,7 @@ const { Content } = await render(entry);
 			<header>
 				<div class="wrapper stack gap-2">
 					<a class="back-link" href={`${import.meta.env.BASE_URL}/${lang}/work/`}><Icon icon="arrow-left" /> <p>{ui.fr['slug.works']}</p></a>
-					<Hero title={entry.data.title} align="start">
+					<Hero title={entry.data.title} align="start" link={entry.data.link}>
 						<div class="details">
 							<div class="tags">
 								{entry.data.tags.map((t) => <Pill>{t}</Pill>)}
