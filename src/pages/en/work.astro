@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import ContactCTA from '../../components/ContactCTA.astro';
+import Grid from '../../components/Grid.astro';
+import Hero from '../../components/Hero.astro';
+import PortfolioPreview from '../../components/PortfolioPreview.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const projects = (await getCollection('work')).sort(
+	(a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf(),
+);
+
+import { ui } from '../../i18n/ui';
+const lang = Astro.url.pathname.includes('/en/') ? 'en' : 'fr';
+const t = ui[lang];
+---
+
+<BaseLayout
+	title={ui.en['work.title']}
+	description={ui.en['work.desc']}
+>
+	<div class="stack gap-20">
+		<main class="wrapper stack gap-8">
+			<Hero
+				title={ui.en['work.hero.title']}
+				tagline={ui.en['work.desc']}
+				align="start"
+			/>
+			<Grid variant="offset">
+				{
+					projects.map((project) => (
+						<li>
+							<PortfolioPreview project={project} />
+						</li>
+					))
+				}
+			</Grid>
+		</main>
+		<ContactCTA title={ui.en['contact.cta.title']} buttonText={ui.en['contact.cta.text']} />
+	</div>
+</BaseLayout>

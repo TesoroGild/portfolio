@@ -3,14 +3,17 @@ import Icon from './Icon.astro';
 import type { iconPaths } from './IconPaths';
 import LangageToggle from './LangageToggle.astro';
 import ThemeToggle from './ThemeToggle.astro';
+import { ui } from '../i18n/ui';
 
 const base = import.meta.env.BASE_URL;
+const lang = Astro.url.pathname.includes('/en') ? 'en' : 'fr';
+const t = ui[lang];
 
 /** Main menu items */
 const textLinks: { label: string; href: string }[] = [
-	{ label: 'Acceuil', href: `${base}` },
-	{ label: 'Projet', href: `${base}/work/` },
-	{ label: 'A propos', href: `${base}/about/` },
+	{ label: `${t['home']}`, href: `${base}/${lang}` },
+	{ label: `${t['works']}`, href: `${base}/${lang}/work/` },
+	{ label: `${t['about']}`, href: `${base}/${lang}/about/` }, 
 ];
 
 /** Icon links to social media — edit these with links to your profiles! */
@@ -21,13 +24,13 @@ const iconLinks: { label: string; href: string; icon: keyof typeof iconPaths }[]
 
 /** Test if a link is pointing to the current page. */
 const isCurrentPage = (href: string) => {
-	let pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
-	let cleanHref = href.replace(import.meta.env.BASE_URL, '');
+	let pathname = Astro.url.pathname.replace(base, '');
+	let cleanHref = href.replace(base, '');
 	if (pathname.at(0) !== '/') pathname = '/' + pathname;
 	if (pathname.at(-1) !== '/') pathname += '/';
 	if (cleanHref.at(0) !== '/') cleanHref = '/' + cleanHref;
 	if (cleanHref.at(-1) !== '/') cleanHref += '/';
-	return pathname === cleanHref || (cleanHref !== '/' && pathname.startsWith(cleanHref));
+	return pathname === cleanHref || (cleanHref !== `/${lang}/` && pathname.startsWith(cleanHref));
 };
 ---
 

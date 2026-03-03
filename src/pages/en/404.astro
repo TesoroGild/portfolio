@@ -1,0 +1,12 @@
+---
+import Hero from '../../components/Hero.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import { ui } from '../../i18n/ui';
+const lang = Astro.url.pathname.includes('/en/') ? 'en' : 'fr';
+const t = ui[lang];
+---
+
+<BaseLayout title="Not Found" description={ui.en['notfound']}>
+	<Hero title="Page Not Found" tagline="Not found" />
+</BaseLayout>

@@ -1,10 +1,12 @@
 ---
 // On récupère l'URL actuelle pour savoir où on est
 const { pathname } = Astro.url;
+const base = import.meta.env.BASE_URL;
 
 // On calcule l'URL inverse
 // Si on est sur /en/contact -> on veut /fr/contact (et inversement)
-const isEn = pathname.startsWith('/en');
+console.log(pathname)
+const isEn = pathname.startsWith(`${base}/en`);
 const redirectPath = isEn 
   ? pathname.replace('/en', '/fr') || '/fr/' 
   : pathname.replace('/fr', '/en') || '/en/';

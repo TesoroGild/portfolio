@@ -1,59 +1,61 @@
 ---
-import ContactCTA from '../components/ContactCTA.astro';
-import Hero from '../components/Hero.astro';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import ContactCTA from '../../components/ContactCTA.astro';
+import Hero from '../../components/Hero.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import { ui } from '../../i18n/ui';
+const lang = Astro.url.pathname.includes('/en/') ? 'en' : 'fr';
+const t = ui[lang];
 ---
 
-<BaseLayout title="A propos - Gildérick BOSSOU" description="A propos de Gildérick">
+<BaseLayout title={ui.fr['about.tab']} description={ui.fr['about.popup']}>
 	<div class="stack gap-20">
 		<main class="wrapper about">
 			<Hero
-				title="A propos"
+				title={ui.fr['about.hero.title']}
 			>
 			</Hero>
 
 			<section>
-				<h2 class="section-title">Background</h2>
+				<h2 class="section-title">{ui.fr['background.title']}</h2>
 				<div class="content">
 					<p>
-						Mon parcours repose sur un socle scientifique rigoureux (Série C — Mathématiques & Physique, 
-						l'équivalent d'un DEC en Sciences pures au Québec) au 
+						{ui.fr['background.p11']}
 						<a href="https://www.linkedin.com/school/coll%C3%A8geprotestantdelom%C3%A9-tokoin/?originalSubdomain=ao" target="_blank" class="school-link" title="Lycée fréquenté">
 							Collège Protestant Lomé-Tokoin
 						</a>.
-						Cette rigueur analytique m'a naturellement conduit vers un cursus d'ingénieur en travaux informatiques à 
+						{ui.fr['background.p12']}  
 						<a href="https://new.iai-togo.tg/" target="_blank" class="school-link" title="1ère université fréquentée">
 							l'Institut Africian d'Informatique représentation Togo (IAI-Togo)
 						</a>, 
-						avant de choisir le Canada pour parfaire mon expertise avec un Baccalauréat en Informatique et Génie Logiciel à
+						{ui.fr['background.p13']}
 						<a href="https://uqam.ca/" target="_blank" class="school-link" title="2ème université fréquentée">
 							l'Université du Québec à Montréal
 						</a>.
 					</p>
 					<p>
-						Passionné par l'architecture logicielle, je consacre mon temps libre à l'apprentissage autonome 
-						et à la réalisation de projets afin d'acquérir, valider et repousser mes limites techniques.
+						{ui.fr['background.p2']}
 					</p>
 					<p>
-						Je tire une fierté de ma persévérance; je ne laisse jamais un projet inachevé et je travaille sans relâche jusqu'à l'objectif ou la deadline.
+						{ui.fr['background.p3']}
 					</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Diplôme</h2>
+				<h2 class="section-title">{ui.fr['education.title']}</h2>
 				<div class="content">
-					<p>Baccalauréat en informatique et génie logiciel à l'UQAM.</p>
+					<p>{ui.fr['education.desc']}</p>
 				</div>
 			</section>
 			<section>
-				<h2 class="section-title">Skills</h2>
+				<h2 class="section-title">{ui.fr['skills.title']}</h2>
 				<div class="content">
-					<p>Curieux, Autodidacte, Travail d'équipe.</p>
+					<p>{ui.fr['skills.desc']}</p>
 				</div>
 			</section>
 		</main>
 
-		<ContactCTA />
+		<ContactCTA title={ui.fr['contact.cta.title']} buttonText={ui.fr['contact.cta.text']} />
 	</div>
 </BaseLayout>
 

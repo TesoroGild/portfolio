@@ -1,12 +1,19 @@
 ---
 import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
+
+interface Props {
+	title?: string | undefined;
+	buttonText?: string | undefined;
+}
+
+const { title, buttonText } = Astro.props;
 ---
 
 <aside>
-	<h2>Interessés par une collaboration?</h2>
+	<h2>{ title }?</h2>
 	<CallToAction href="mailto:gilboss85@gmail.com">
-		Contactez-moi
+		{ buttonText }
 		<Icon icon="paper-plane-tilt" size="1.2em" />
 	</CallToAction>
 </aside>

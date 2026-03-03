@@ -1,0 +1,136 @@
+---
+import ContactCTA from '../../components/ContactCTA.astro';
+import Hero from '../../components/Hero.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+import { ui } from '../../i18n/ui';
+const lang = Astro.url.pathname.includes('/en/') ? 'en' : 'fr';
+const t = ui[lang];
+---
+
+<BaseLayout title={ui.en['about.tab']} description={ui.en['about.popup']}>
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title={ui.en['about.hero.title']}
+			>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">{ui.en['background.title']}</h2>
+				<div class="content">
+					<p>
+						{ui.en['background.p11']}
+						<a href="https://www.linkedin.com/school/coll%C3%A8geprotestantdelom%C3%A9-tokoin/?originalSubdomain=ao" target="_blank" class="school-link" title="Lycée fréquenté">
+							Collège Protestant Lomé-Tokoin
+						</a>.
+                        {ui.en['background.p12']} 
+						<a href="https://new.iai-togo.tg/" target="_blank" class="school-link" title="1ère université fréquentée">
+							l'Institut Africian d'Informatique représentation Togo (IAI-Togo)
+						</a>,
+						{ui.en['background.p13']}
+						<a href="https://uqam.ca/" target="_blank" class="school-link" title="2ème université fréquentée">
+							Université du Québec à Montréal
+						</a>.
+					</p>
+					<p>
+						{ui.en['background.p2']}
+					</p>
+					<p>
+						{ui.en['background.p3']}
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">{ui.en['education.title']}</h2>
+				<div class="content">
+					<p>{ui.en['education.desc']}</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">{ui.en['skills.title']}</h2>
+				<div class="content">
+					<p>{ui.en['skills.desc']}</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA title={ui.en['contact.cta.title']} buttonText={ui.en['contact.cta.text']} />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	.school-link {
+		color: #2563eb; 
+		font-weight: 700;
+		text-decoration: none;
+		position: relative;
+		transition: all 0.3s ease;
+		cursor: help;
+		border-bottom: 2px solid rgba(37, 99, 235, 0.2);
+	}
+
+	.school-link:hover {
+		color: #1e40af;
+		border-bottom-color: #1e40af;
+		background-color: rgba(37, 99, 235, 0.05);
+		border-radius: 4px;
+		padding: 0 2px;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
