@@ -12,6 +12,17 @@ tags:
 link: https://miandabou.vercel.app/home
 ---
 
+![Static Badge](https://img.shields.io/badge/Angular-gray?logo=angular)
+![Static Badge](https://img.shields.io/badge/Typescript-gray?logo=Typescript)
+![Static Badge](https://img.shields.io/badge/Tailwind-gray?logo=Tailwindcss)
+![Static Badge](https://img.shields.io/badge/i18n-gray?logo=i18next)
+![Static Badge](https://img.shields.io/badge/Symfony-gray?logo=symfony)
+![Static Badge](https://img.shields.io/badge/PHP-gray?logo=php)
+![Static Badge](https://img.shields.io/badge/Composer-gray?logo=composer)
+![Static Badge](https://img.shields.io/badge/Auth-JWT-blue?logo=jsonwebtokens)
+![Static Badge](https://img.shields.io/badge/Docker-gray?logo=docker)
+![Static Badge](https://img.shields.io/badge/PostgreSQL-gray?logo=PostgreSQL)
+
 ### À propos
 Miandabou est une plateforme e-commerce full-stack conçue pour démontrer une maîtrise du cycle d'achat et de la gestion d'inventaire. L'objectif était de bâtir une architecture modulaire capable de gérer des rôles utilisateurs distincts et des flux de données complexes.
 
