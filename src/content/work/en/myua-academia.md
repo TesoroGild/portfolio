@@ -15,7 +15,7 @@ link: https://
 ![Static Badge](https://img.shields.io/badge/Tailwind-gray?logo=Tailwindcss)
 ![Static Badge](https://img.shields.io/badge/Flowbite-gray?logo=react)
 ![Static Badge](https://img.shields.io/badge/React--Hook--Form-gray?logo=react)
-![Static Badge](https://img.shields.io/badge/SQL_Server-gray?logo=microsoftsqlserver)
+[<img src="https://img.shields.io/badge/My SQl Server-yellow.svg">]()
 
 ### About
 MyUA Academia is a full-stack school management platform designed to centralize the operations of a higher education institution. The platform covers the entire academic lifecycle—from student admission to grade entry—by providing three distinct interfaces tailored to the role of the logged-in user.
@@ -28,13 +28,15 @@ MyUA Academia is a full-stack school management platform designed to centralize 
 <image src="/portfolio/assets/myua/admission4.png" width=400 center>
 <image src="/portfolio/assets/myua/admission5.png" width=400 center>
 <image src="/portfolio/assets/myua/admission6.png" width=400 center>
-<image src="/portfolio/assets/myua/admission7.png" width=400 center><br>
+<image src="/portfolio/assets/myua/admission7.png" width=400 center>
+
 Public application form with program selection (up to 2), password complexity requirements, and document upload. The full process includes application review, payment of the application fee ($120), and email confirmation. 
 
 ##### Student sspace
 <image src="/portfolio/assets/myua/sspace1.png" width=400 center><image src="/portfolio/assets/myua/sspace2.png" width=400 center>
 <image src="/portfolio/assets/myua/sspace4.png" width=400 center><image src="/portfolio/assets/myua/sspace5.png" width=400 center>
-<image src="/portfolio/assets/myua/sspace6.png" width=400 center><br>
+<image src="/portfolio/assets/myua/sspace6.png" width=400 center>
+
 * Course registration with schedule conflict detection and shopping cart management
 * Billing by session with dynamic calculation (course fees + fixed costs)
 * Academic progress tracking (courses completed / in progress / remaining)
@@ -43,7 +45,8 @@ Public application form with program selection (up to 2), password complexity re
 ##### Professeur space
 <image src="/portfolio/assets/myua/pspace1.png" width=500 center>
 <image src="/portfolio/assets/myua/pspace2.png" width=500 center>
-<image src="/portfolio/assets/myua/pspace3.png" width=500 center><br>
+<image src="/portfolio/assets/myua/pspace3.png" width=500 center>
+
 * Drill-down navigation: Level → Program → Course → Enrolled Students
 * Grade entry by grade level (A+… E) with CSV import and progress bar
 * Weekly academic schedule and room availability check
@@ -52,7 +55,8 @@ Public application form with program selection (up to 2), password complexity re
 <image src="/portfolio/assets/myua/aspace1.png" width=500 center>
 <image src="/portfolio/assets/myua/aspace2.png" width=500 center>
 <image src="/portfolio/assets/myua/aspace3.png" width=500 center>
-<image src="/portfolio/assets/myua/aspace4.png" width=500 center><br>
+<image src="/portfolio/assets/myua/aspace4.png" width=500 center>
+
 * Comprehensive employee management: creating and approving records, activating accounts
 * Contract system (open positions) with auto-fill when creating an employee
 * Assigning teachers to class sessions
@@ -94,6 +98,7 @@ Public application form with program selection (up to 2), password complexity re
   Professors :
   <ul style="margin: 5px 0;">
     <li>Curry : CURS14151988RN0 curry.</li>
+    <li>Rihanna : FENR20351988PF0 Rihanna1234-</li>
   </ul><br/>
   Students :
   <ul style="margin: 5px 0;">
