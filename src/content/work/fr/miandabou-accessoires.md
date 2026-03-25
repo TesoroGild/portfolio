@@ -1,7 +1,7 @@
 ---
 title: MiandabouAccessoires
 publishDate: 2026-03-01 00:00:00
-img: /portfolio/assets/mdb.png
+img: /portfolio/assets/miandabou/mdb.png
 img_alt: Miandabou's Logo
 description: |
   E-commerce ERP
@@ -28,24 +28,24 @@ Miandabou est une plateforme e-commerce full-stack conçue pour démontrer une m
 
 ### Fonctionnalités Clés
 ##### Connexion
-<image src="/portfolio/assets/login.png" width=400 center>
+<image src="/portfolio/assets/miandabou/login.png" width=400 center>
 
 ##### Création de compte
-<image src="/portfolio/assets/signup1.png" width=400 center><image src="/portfolio/assets/signup2.png" width=400 center>
+<image src="/portfolio/assets/miandabou/signup1.png" width=400 center><image src="/portfolio/assets/miandabou/signup2.png" width=400 center>
 
 ##### Articles
 - Pour les employés
-<image src="/portfolio/assets/stock.png" width=500 center>
+<image src="/portfolio/assets/miandabou/stock.png" width=500 center>
 - Pour les clients
-<image src="/portfolio/assets/items.png" width=500 center>
+<image src="/portfolio/assets/miandabou/items.png" width=500 center>
 
 ##### Panier
-<image src="/portfolio/assets/cart1.png" width=500 center>
-<image src="/portfolio/assets/cart2.png" width=500 center>
+<image src="/portfolio/assets/miandabou/cart1.png" width=500 center>
+<image src="/portfolio/assets/miandabou/cart2.png" width=500 center>
 
 ##### Facture
-<image src="/portfolio/assets/confirmation.png" width=500 center>
-<image src="/portfolio/assets/bill.png" width=500 center>
+<image src="/portfolio/assets/miandabou/confirmation.png" width=500 center>
+<image src="/portfolio/assets/miandabou/bill.png" width=500 center>
 
 ### Points forts techniques
 - **Architecture** : Découplage complet entre une SPA (Angular) et une API REST (Symfony).
