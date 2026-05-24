@@ -8,7 +8,7 @@ description: |
 tags:
   - Design
   - Dev
-link: https://myuaacademia.up.railway.app/home
+link: https://my-ua-academia.vercel.app
 ---
 
 ![Static Badge](https://img.shields.io/badge/React-gray?logo=react)
